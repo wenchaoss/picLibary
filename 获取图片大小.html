@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+	<div class="p"></div>
+    <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/underscore.js"></script>
+    <script type="text/javascript">
+    var yuandata = {};
+    $.get("data/imageList.json",function(res){
+    	yuandata = eval("(" + res  + ")");
+    	console.log(yuandata);
+    	
+    	_.each(yuandata.data,function(dic){
+    		var url = dic.url;
+    		var img = new Image();
+    		img.src = url;
+    		var index = dic.url.match(/\d+/)-1;
+    		img.onload = function(){
+    			// console.log(dic.name + index + "width: "+img.width +",height: "+img.height);
+    			yuandata.data[index].width = img.width;
+    			yuandata.data[index].height = img.height;
+    		}
+    	})
+    })
+    setTimeout(function(){
+    	$("div").html(JSON.stringify(yuandata))
+
+    },1000)
+    </script>
+</body>
+</html>
