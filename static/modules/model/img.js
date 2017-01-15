@@ -2,7 +2,6 @@
 define(function(require,expors,module){
     //求图片真实的宽度
     var w = ($(window).width()-6*3)/2;
-    
     //创建图片模型类
     var ImageModel = Backbone.Model.extend({
         initialize : function(obj){

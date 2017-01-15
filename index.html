@@ -64,23 +64,7 @@
 <script type="text/javascript" src="static/lib/zepto.touch.js"></script>
 <script type="text/javascript" src="static/lib/underscore.js"></script>
 <script type="text/javascript" src="static/lib/backbone.js"></script>
-<script type="text/javascript" src="static/lib/swipe.js"></script>
 <script type="text/javascript">
-// var slider = document.getElementById('slider');
-// window.mySwipe = Swipe(slider);
-// window.mySwipe = Swipe(slider,{
-// 		  startSlide: 2,
-// 		  speed: 500,
-// 		  auto: 1000,
-// 		  continuous: true,
-// 		  disableScroll: false,
-// 		  stopPropagation: false,
-// 		  callback: function(index, elem) {
-
-// 		  },
-// 		  transitionEnd: function(index, elem) {}
-// });
-// 写配置
 seajs.config({
 	// 简化路径书写
 	alias: {
@@ -92,7 +76,6 @@ seajs.config({
 })
 // 引入入口文件
 seajs.use('app', function (app) {
-	// app是一个函数接口，我们直接执行
 	app()
 })
 </script>

@@ -1,6 +1,5 @@
 //创建点击大图视图
 define(function(require,exports,module){
-    //引入样式文件
     require('modules/layer/layer.css');
     //获取窗口的高度
     var h = $(window).height();
@@ -151,7 +150,6 @@ define(function(require,exports,module){
             }
             
         },
-
         //定义模板
         tpl: _.template($('#tpl_layer').html()),
         //渲染视图方法

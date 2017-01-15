@@ -1,6 +1,5 @@
 //创建显示列表项视图
 define(function(require,exports,module){
-    //引入css模块
     require('modules/list/list.css');
     var List = Backbone.View.extend({
         //绑定事件
@@ -132,7 +131,6 @@ define(function(require,exports,module){
 			// 修改高度
 			this.leftHeight += height + 6;
 		},
-        
         //事件
         //搜索事件
         //获取搜索框内容
