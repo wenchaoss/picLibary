@@ -2,7 +2,6 @@
 define(function(require,exports,module){
     require('modules/list/list.css');
     var List = Backbone.View.extend({
-        //绑定事件
         events: {
             //搜索事件
             'tap .search span': 'showSearchView',
@@ -48,7 +47,6 @@ define(function(require,exports,module){
 				// 返回顶部的交互
 				me.showHideGoTop();
 			})
-            //拉取数据
             this.getData();
         //    this.tx = $('.typebus').css("transform").match(/-?\d+/)[0];
         this.tx = 0;
@@ -99,17 +97,13 @@ define(function(require,exports,module){
         render : function(model){
             //获取模型高度
             var height = model.get('viewHeight');
-            //1)获取数据
             var data = {
                 id: model.get('id'),
                 url: model.get('url'),
                 style: 'width: ' + model.get('viewWidth') + ';height: ' + height + ';'
             };
-            //2)获取模板
             var tpl = this.tpl;
-            //3)格式化模板
             var html = tpl(data);
-            //4)渲染页面
             if (this.leftHeight > this.rightHeight) {
 				// 向右边添加
 				this.renderRight(html, height);
